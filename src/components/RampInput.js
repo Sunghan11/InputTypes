@@ -1,37 +1,44 @@
 import ClockTimer from './Clocktimer';
-
+import React from 'react';
 
 function RampInput(props) {
     const falsyVal = [undefined, null, NaN, 0, "", false];
 
     // if (Array.isArray(props.input)) {
-    if(props.input[0] === '[' && props.input.slice(-1) === ']') {
-        let newInput = props.input.slice(1,-1);
-
+    debugger;
+    if(props.value === undefined) {
+        return ("");
+    } else if (falsyVal.includes(props.value.input)) {
         return (
-            <div>
-                <h2>Prop passed as an Array</h2>
-                <ul>
-                    {
-                        newInput.split(',').map((item, i) => (
-                            <li key={i}>{item}</li>
-                        ))
-                    }
-                </ul>
+            <div className="input-result">
+                <h2>Prop passed as undefined or Falsy</h2>
+                <div id="clock">
+                    <ClockTimer />
+                </div>
             </div>
         )
-    } else if (falsyVal.includes(props.input)) {
+    } else if (props.value.input[0] === '[' && props.value.input.slice(-1) === ']') {
+        let newInput = props.value.input.slice(1,-1);
+
         return (
-            <div>
-                <h2>Prop passed as undefined or Falsy</h2>
-                <ClockTimer />
+            <div className="input-result">
+                <h2>Prop passed as an Array</h2>
+                <div id="array">
+                    <ul>
+                        {
+                            newInput.split(',').map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))
+                        }
+                    </ul>
+                </div>
             </div>
         )
     } else {
         return (
-            <div>
+            <div className="input-result">
                 <h2>Prop passed as non-array or Falsey</h2>
-                <h4>{props.input}</h4>
+                <div id="string">{props.value.input}</div>
             </div>
         )
     }

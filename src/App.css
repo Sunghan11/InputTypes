@@ -13,3 +13,121 @@ a {
   color: #333;
   text-decoration: none;
 }
+
+/* .output {
+  display: none;
+} */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 500px;
+  height: 500px;
+  /* background-color: grey; */
+  
+}
+
+.App h1 {
+  margin: 0 auto;
+}
+
+.input-form-text {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+#text-bubble {
+  width: 400px;
+  height: 40px;
+  margin: 0 auto;
+  border: solid 3px rgb(10, 170, 175);
+  border-radius: 30px;
+  text-indent: 20px;
+  font-weight: bold;
+}
+
+#input-form-button {
+  border: solid 2px rgb(10, 170, 175); 
+  background-color: rgb(10, 170, 175); 
+  transition: .2s ease;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+  width: 70px;
+  height: 40px;
+  border-radius: 10px;
+  margin-left: 215px;
+  margin-top: 5px;
+  box-shadow: 0 3px 3px 0 rgb(0,0,0,0.4);
+}
+
+#input-form-button:hover {
+  background:  rgb(15, 199, 153); 
+  font-weight: normal;
+}
+
+.App h1 {
+  display: flex;
+  line-height: 60px;
+}
+
+.clock {
+  text-align: center;
+}
+
+.input-result {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#ramp-logo {
+  position: relative;
+  color: rgb(0, 124, 128);
+  width: 50px;
+  height: 50px;
+  border-bottom: 40px solid rgb(59, 224, 197);
+  border-left: 50px solid transparent;
+  margin-bottom: 10px;
+}
+
+.clock {
+  display: inline-block;
+  border: 3px solid black;
+  padding: 5px, 10px;
+}
+
+#clock-date {
+  color: green;
+  padding: 5px;
+}
+
+#clock-time {
+  background-color: rgb(182, 231, 219);
+  color: red;
+  padding: 5px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#string {
+  font-size: 20px;
+}
+
+#array {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#array li {
+  border: 1px solid blue;
+  border-radius: 5px;
+  min-width: 200px;
+}

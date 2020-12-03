@@ -2,10 +2,19 @@ import { useState, useEffect } from 'react';
 
 export default function ClockTimer() {
     const ticker = NewTime(new Date());
+    const Months = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", 
+    "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"]
+    const currDate = new Date();
+    let month = Months[currDate.getUTCMonth()];
+    let day = currDate.getUTCDate();
+    let year = currDate.getUTCFullYear();
+
+    let newDate = month + "," + day + "," + year;
 
     return(
         <div className="clock">
-            <h2>{ticker.toLocaleTimeString()}</h2>
+            <h2 id="clock-date">{newDate}</h2>
+            <h2 id="clock-time">{ticker.toLocaleTimeString()}</h2>
         </div>
     )
 }
@@ -27,4 +36,6 @@ function NewTime(currentDate) {
 
     return date;
 }
+
+
 

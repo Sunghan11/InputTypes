@@ -1,33 +1,39 @@
-import React from 'react'
-import UseInput from './UseInput';
-import RampInput from './RampInput';
+import React, {useState} from 'react'
 
-function inputForm() {
-    // const [newInput, setInput] = useState('');
+function InputForm(props) {
+    const [input, setInput] = useState('');
+    // const [newInput, bindNewInput] = UseInput('');
 
-    const [newInput, bindNewInput] = UseInput('');
+    const update = e => {
+        setInput(e.target.value);
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
+        props.onSubmit({
+            input: input
+        });
     }
 
     return (
-        <div>
+        <div className="input-form">
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Input Here</label>
+                <div className="input-form-text">
+                    <br />
                     <input 
-                    {...bindNewInput}
+                    // {...bindNewInput}
                         type="text" 
-                        // value={newInput} 
-                        // onChange={e => UseInput(e.target.value)} 
+                        id="text-bubble"
+                        placeholder="INPUT HERE"
+                        value={input}
+                        name="text"
+                        onChange={update} 
                     />
                 </div>
-                <button type="submit">Go</button>
-                <RampInput input={newInput}/>
+                <button id="input-form-button">Submit</button>
             </form>
         </div>
     )
 }
 
-export default inputForm;
+export default InputForm;
